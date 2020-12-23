@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: me.antoniocaccamo.poc
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, java, junit, logback, lombok, maven, picocli, picocli-java-application, picocli-junit, readme, shade, yaml]
