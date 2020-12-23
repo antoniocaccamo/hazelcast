@@ -1,15 +1,21 @@
-package me.antoniocaccamo.poc;
+package me.antoniocaccamo.poc.hazelcast;
 
 import io.micronaut.configuration.picocli.PicocliRunner;
-import io.micronaut.context.ApplicationContext;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
 
-@Command(name = "hazelcast", description = "...",
-        mixinStandardHelpOptions = true)
+
+@Command(
+        name = "hazelcast", 
+        description = "...",
+        subcommands={   
+            HazelcastConsumerCommand.class    ,
+            HazelcastProducerCommand.class
+        }, 
+        mixinStandardHelpOptions = true
+)        
 public class HazelcastCommand implements Runnable {
 
     @Option(names = {"-v", "--verbose"}, description = "...")
@@ -24,5 +30,15 @@ public class HazelcastCommand implements Runnable {
         if (verbose) {
             System.out.println("Hi!");
         }
+
+        CommandLine.usage(this, System.out);
+
+
+    }    
+
+    public static class Constants {
+        public static final String Topic = "hazelcast-topic-name";
     }
 }
+
+

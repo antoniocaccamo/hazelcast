@@ -6,6 +6,8 @@ import io.micronaut.context.env.Environment;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
+import me.antoniocaccamo.poc.hazelcast.HazelcastCommand;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
