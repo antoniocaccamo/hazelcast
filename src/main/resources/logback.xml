@@ -9,6 +9,10 @@
         </encoder>
     </appender>
 
+    <logger name="com.hazelcast" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
